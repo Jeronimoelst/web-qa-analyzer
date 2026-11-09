@@ -25,7 +25,3 @@ def teardown(driver):
     driver.quit()
 
 
-
-driver = setup()
-title(driver)
-teardown(driver)
