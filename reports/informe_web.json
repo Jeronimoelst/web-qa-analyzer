@@ -1,0 +1,193 @@
+[
+    {
+        "fecha_ejecucion": "2026-11-17T16:04:45",
+        "resumen": {
+            "total": 1,
+            "PASS": 0,
+            "FAIL": 1,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 0.0
+        },
+        "resultados": [
+            {
+                "test": "test_links",
+                "fecha": "2026-11-17T16:04:45",
+                "url": "https://the-internet.herokuapp.com/",
+                "resultado": "FAIL",
+                "descripcion": "El título de la página no coincide"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-17T16:13:05",
+        "resumen": {
+            "total": 1,
+            "PASS": 1,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 100.0
+        },
+        "resultados": [
+            {
+                "test": "test_links",
+                "fecha": "2026-11-17T16:13:05",
+                "url": "https://the-internet.herokuapp.com/",
+                "resultado": "PASS",
+                "descripcion": "Se encontraron 81 enlaces y el título es correcto"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-17T16:25:46",
+        "resumen": {
+            "total": 1,
+            "PASS": 0,
+            "FAIL": 0,
+            "ERROR": 1,
+            "SKIPPED": 0,
+            "porcentaje_exito": 0.0
+        },
+        "resultados": [
+            {
+                "test": "test_check_boxes",
+                "fecha": "2026-11-17T16:25:46",
+                "url": "Desconocida",
+                "resultado": "ERROR",
+                "descripcion": "'NoneType' object is not subscriptable"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-17T16:27:40",
+        "resumen": {
+            "total": 1,
+            "PASS": 1,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 100.0
+        },
+        "resultados": [
+            {
+                "test": "test_check_boxes",
+                "fecha": "2026-11-17T16:27:40",
+                "url": "https://the-internet.herokuapp.com/checkboxes",
+                "resultado": "PASS",
+                "descripcion": "Se encontraron 2 casillas de verificación y todas están marcadas"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-17T16:38:38",
+        "resumen": {
+            "total": 14,
+            "PASS": 12,
+            "FAIL": 2,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 85.71
+        },
+        "resultados": [
+            {
+                "test": "tests/test_analizador_urls.py::test_validar_url[https://example.com-True]",
+                "fecha": "2026-11-17T16:37:07",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_validar_url[http://example.com/page-True]",
+                "fecha": "2026-11-17T16:37:07",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_validar_url[-False]",
+                "fecha": "2026-11-17T16:37:07",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_validar_url[ftp://example.com-False]",
+                "fecha": "2026-11-17T16:37:07",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_validar_url[https://localhost-False]",
+                "fecha": "2026-11-17T16:37:07",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_validar_url[https://.com-False]",
+                "fecha": "2026-11-17T16:37:07",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_check_boxes.py::test_check_boxes",
+                "fecha": "2026-11-17T16:37:15",
+                "url": "https://the-internet.herokuapp.com/checkboxes",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_dropdown.py::test_dropdown",
+                "fecha": "2026-11-17T16:37:29",
+                "url": "https://the-internet.herokuapp.com/dropdown",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_esperas.py::test_esperas",
+                "fecha": "2026-11-17T16:37:44",
+                "url": "https://the-internet.herokuapp.com/dynamic_loading/1",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_keypresses.py::test_key_presses[A-A]",
+                "fecha": "2026-11-17T16:37:53",
+                "url": "https://the-internet.herokuapp.com/key_presses",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_keypresses.py::test_key_presses[B-B]",
+                "fecha": "2026-11-17T16:38:07",
+                "url": "https://the-internet.herokuapp.com/key_presses",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_keypresses.py::test_key_presses[\\ue007-ENTER]",
+                "fecha": "2026-11-17T16:38:17",
+                "url": "https://the-internet.herokuapp.com/key_presses?",
+                "resultado": "FAIL",
+                "descripcion": "driver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"745f03c81e79de620b3d0a6a1b2cf4d8\")>\nkeypresses = '\\ue007', expected = 'ENTER'\n\n    @pytest.mark.parametrize(\n        (\"keypresses\", \"expected\"),\n        [\n            (\"A\", \"A\"),\n            (\"B\", \"B\"),\n            (Keys.ENTER, \"ENTER\"),\n        ],\n    )\n    def test_key_presses(driver, keypresses, expected):\n        assert contar_enlaces(driver) > 0\n    \n        driver.find_element(By.LINK_TEXT, \"Key Presses\").click()\n        driver.find_element(By.TAG_NAME, \"input\").send_keys(keypresses)\n        resultado = driver.find_element(By.ID, \"result\").text\n    \n>       assert resultado == f\"You entered: {expected}\"\nE       AssertionError: assert '' == 'You entered: ENTER'\nE         \nE         - You entered: ENTER\n\ntests\\test_keypresses.py:23: AssertionError"
+            },
+            {
+                "test": "tests/test_navegacion.py::test_links",
+                "fecha": "2026-11-17T16:38:26",
+                "url": "https://the-internet.herokuapp.com/",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_textbox_ab.py::test_textbox_ab",
+                "fecha": "2026-11-17T16:38:35",
+                "url": "https://the-internet.herokuapp.com/abtest",
+                "resultado": "FAIL",
+                "descripcion": "driver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"bce7ea27209a5c60d558fd89caee08a8\")>\n\n    def test_textbox_ab(driver):\n        assert contar_enlaces(driver) > 0\n    \n        text_box = driver.find_element(By.ID, \"example-filter\")\n        text_box.send_keys(\"A/B Testing\")\n        assert text_box.get_attribute(\"value\") == \"A/B Testing\"\n    \n        driver.find_element(By.LINK_TEXT, \"A/B Testing\").click()\n    \n>       assert driver.title in [\"A/B Test Control\", \"A/B Test Variation 1\"]\nE       assert 'The Internet' in ['A/B Test Control', 'A/B Test Variation 1']\nE        +  where 'The Internet' = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"bce7ea27209a5c60d558fd89caee08a8\")>.title\n\ntests\\test_textbox_ab.py:15: AssertionError"
+            }
+        ]
+    }
+]

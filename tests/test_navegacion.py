@@ -1,4 +1,3 @@
-import logging
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -20,7 +19,7 @@ def test_links():
                 "descripcion": "No se encontraron enlaces en la página"
             }
 
-        assert driver.title == "Welcome to the-internet"
+        assert driver.title == "The Internet"
 
         return {
             "estado": "PASS",

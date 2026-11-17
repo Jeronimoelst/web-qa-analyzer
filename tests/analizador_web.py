@@ -11,11 +11,8 @@ def setup():
 
 
 def title(driver):
-    heading = driver.find_element(By.TAG_NAME, "h1")
-    print(f"Título de la página: {heading.text}")
-    titulo = heading.text
-    wait = WebDriverWait(driver, 10)
-    assert titulo == "Welcome to the-internet"
+    tittle = driver.title
+    assert tittle == "The Internet"
     
 
 def contar_enlaces(driver):
