@@ -1,13 +1,14 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-from analizador_web import contar_enlaces
+from analizador_web import contar_enlaces, setup, teardown
 
 
 def test_check_boxes():
     driver = setup()
 
     try:
+        assert driver.title == "The Internet"
         contador_enlaces = contar_enlaces(driver)
         
         if contador_enlaces == 0:
@@ -17,10 +18,6 @@ def test_check_boxes():
                         "descripcion": "No se encontraron enlaces en la página"
                     }
         
-        
-        assert driver.title == "The Internet"
-
-
         enlace = driver.find_element(By.LINK_TEXT, "Checkboxes")
         enlace.click()
 

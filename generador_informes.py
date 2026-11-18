@@ -92,3 +92,50 @@ def contabilizador(tests):
     print(resumen)
 
     return resumen
+
+
+def guardar_informe(resultados):
+    contador = {
+        "PASS": 0,
+        "FAIL": 0,
+        "ERROR": 0,
+        "SKIPPED": 0
+    }
+
+    for resultado in resultados:
+        estado = resultado["resultado"]
+        if estado not in contador:
+            estado = "ERROR"
+            resultado["resultado"] = estado
+        contador[estado] += 1
+
+    total = sum(contador.values())
+    ejecutados = total - contador["SKIPPED"]
+    porcentaje = (
+        contador["PASS"] / ejecutados * 100
+        if ejecutados > 0 else 0
+    )
+
+    informe = {
+        "fecha_ejecucion": datetime.now().isoformat(timespec="seconds"),
+        "resumen": {
+            "total": total,
+            **contador,
+            "porcentaje_exito": round(porcentaje, 2)
+        },
+        "resultados": resultados
+    }
+
+    RUTA_INFORMES.mkdir(parents=True, exist_ok=True)
+
+    informes = []
+    if ARCHIVO_JSON.exists():
+        with open(ARCHIVO_JSON, "r", encoding="utf-8") as archivo:
+            contenido = json.load(archivo)
+            if isinstance(contenido, list):
+                informes = contenido
+
+    informes.append(informe)
+
+    with open(ARCHIVO_JSON, "w", encoding="utf-8") as archivo:
+        json.dump(informes, archivo, indent=4, ensure_ascii=False)

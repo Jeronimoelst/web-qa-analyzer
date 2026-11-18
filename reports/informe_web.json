@@ -189,5 +189,292 @@
                 "descripcion": "driver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"bce7ea27209a5c60d558fd89caee08a8\")>\n\n    def test_textbox_ab(driver):\n        assert contar_enlaces(driver) > 0\n    \n        text_box = driver.find_element(By.ID, \"example-filter\")\n        text_box.send_keys(\"A/B Testing\")\n        assert text_box.get_attribute(\"value\") == \"A/B Testing\"\n    \n        driver.find_element(By.LINK_TEXT, \"A/B Testing\").click()\n    \n>       assert driver.title in [\"A/B Test Control\", \"A/B Test Variation 1\"]\nE       assert 'The Internet' in ['A/B Test Control', 'A/B Test Variation 1']\nE        +  where 'The Internet' = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"bce7ea27209a5c60d558fd89caee08a8\")>.title\n\ntests\\test_textbox_ab.py:15: AssertionError"
             }
         ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T16:40:12",
+        "resumen": {
+            "total": 1,
+            "PASS": 1,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 100.0
+        },
+        "resultados": [
+            {
+                "test": "tests/test_dropdown.py::test_dropdown",
+                "fecha": "2026-11-18T16:40:09",
+                "url": "https://the-internet.herokuapp.com/dropdown",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T16:52:28",
+        "resumen": {
+            "total": 0,
+            "PASS": 0,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 0
+        },
+        "resultados": []
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T16:57:01",
+        "resumen": {
+            "total": 1,
+            "PASS": 0,
+            "FAIL": 0,
+            "ERROR": 1,
+            "SKIPPED": 0,
+            "porcentaje_exito": 0.0
+        },
+        "resultados": [
+            {
+                "test": "tests/test_keypresses.py::test_key_presses",
+                "fecha": "2026-11-18T16:57:01",
+                "url": null,
+                "resultado": "ERROR",
+                "descripcion": "file C:\\Users\\jeron\\Documents\\web-qa-analyzer\\web-qa-analyzer\\tests\\test_keypresses.py, line 8\n  def test_key_presses(keypresses):\nE       fixture 'keypresses' not found\n>       available fixtures: cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, doctest_namespace, driver, monkeypatch, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory\n>       use 'pytest --fixtures [testpath]' for help on them.\n\nC:\\Users\\jeron\\Documents\\web-qa-analyzer\\web-qa-analyzer\\tests\\test_keypresses.py:8"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T17:02:51",
+        "resumen": {
+            "total": 3,
+            "PASS": 2,
+            "FAIL": 0,
+            "ERROR": 1,
+            "SKIPPED": 0,
+            "porcentaje_exito": 66.67
+        },
+        "resultados": [
+            {
+                "test": "tests/test_keypresses.py::test_key_presses[A-A]",
+                "fecha": "2026-11-18T17:02:21",
+                "url": "https://the-internet.herokuapp.com/key_presses",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_keypresses.py::test_key_presses[B-B]",
+                "fecha": "2026-11-18T17:02:36",
+                "url": "https://the-internet.herokuapp.com/key_presses",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_keypresses.py::test_key_presses[\\ue007-ENTER]",
+                "fecha": "2026-11-18T17:02:48",
+                "url": "https://the-internet.herokuapp.com/key_presses?",
+                "resultado": "ERROR",
+                "descripcion": "driver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"5d9fc6929a21c27237118c00b4431771\")>\nkeypress = '\\ue007', expected = 'ENTER'\n\n    @pytest.mark.parametrize(\n        (\"keypress\", \"expected\"),\n        [\n            (\"A\", \"A\"),\n            (\"B\", \"B\"),\n            (Keys.ENTER, \"ENTER\"),\n        ],\n    )\n    def test_key_presses(driver, keypress, expected):\n        assert driver.title == \"The Internet\"\n        assert contar_enlaces(driver) > 0\n    \n        driver.find_element(By.LINK_TEXT, \"Key Presses\").click()\n        driver.find_element(By.TAG_NAME, \"input\").send_keys(keypress)\n    \n>       result = WebDriverWait(driver, 10).until(\n            lambda browser: browser.find_element(By.ID, \"result\").text\n            or False\n        )\n\ntests\\test_keypresses.py:24: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n..\\..\\..\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:112: in until\n    value = method(self._driver)\n            ^^^^^^^^^^^^^^^^^^^^\ntests\\test_keypresses.py:25: in <lambda>\n    lambda browser: browser.find_element(By.ID, \"result\").text\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\..\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\selenium\\webdriver\\remote\\webelement.py:103: in text\n    return self._execute(Command.GET_ELEMENT_TEXT)[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\..\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\selenium\\webdriver\\remote\\webelement.py:505: in _execute\n    return self._parent.execute(command, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\..\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:566: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000019CD83442D0>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"stale element reference\",\"message\":\"stale element reference: stale elemen...4cdde464]\\\\n\\\\t(No symbol) [0x7ff74cdc731c]\\\\n\\\\t(No symbol) [0x7ffa5e28dda7]\\\\n\\\\t(No symbol) [0x7ffa5fbf9c5c]\\\\n\"}}'}\n\n    def check_response(self, response: dict[str, Any]) -> None:\n        \"\"\"Check that a JSON response from the WebDriver does not have an error.\n    \n        Args:\n            response: The JSON response from the WebDriver server as a dictionary\n                object.\n    \n        Raises:\n            WebDriverException: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                try:\n                    value = json.loads(value_json)\n                    if isinstance(value, dict):\n                        if len(value) == 1:\n                            value = value[\"value\"]\n                        status = value.get(\"error\", None)\n                        if not status:\n                            status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                            message = value.get(\"value\") or value.get(\"message\")\n                            if not isinstance(message, str):\n                                value = message\n                                message = message.get(\"message\") if isinstance(message, dict) else None\n                        else:\n                            message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response.get(\"value\")\n        if isinstance(value, str):\n            raise exception_class(value)\n        if isinstance(value, dict):\n            if message == \"\" and \"message\" in value:\n                message = value[\"message\"]\n    \n            screen = None  # type: ignore[assignment]\n            if \"screen\" in value:\n                screen = value[\"screen\"]\n    \n            stacktrace = None\n            st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n            if st_value:\n                if isinstance(st_value, str):\n                    stacktrace = st_value.split(\"\\n\")\n                else:\n                    stacktrace = []\n                    try:\n                        for frame in st_value:\n                            line = frame.get(\"lineNumber\", \"\")\n                            file = frame.get(\"fileName\", \"<anonymous>\")\n                            if line:\n                                file = f\"{file}:{line}\"\n                            meth = frame.get(\"methodName\", \"<anonymous>\")\n                            if \"className\" in frame:\n                                meth = f\"{frame['className']}.{meth}\"\n                            msg = \"    at %s (%s)\"\n                            msg = msg % (meth, file)\n                            stacktrace.append(msg)\n                    except TypeError:\n                        pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if isinstance(value, dict):\n                if \"data\" in value:\n                    alert_text = value[\"data\"].get(\"text\")\n                elif \"alert\" in value:\n                    alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found\nE         (Session info: chrome=157.0.8103.79); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception\nE       Stacktrace:\nE       Symbols not available. Dumping unresolved backtrace:\nE       \t(No symbol) [0x7ff74cedd655]\nE       \t(No symbol) [0x7ff74cdd4790]\nE       \t(No symbol) [0x7ff74cc42fb3]\nE       \t(No symbol) [0x7ff74d45fa32]\nE       \t(No symbol) [0x7ff74d45eca9]\nE       \t(No symbol) [0x7ff74cc4712d]\nE       \t(No symbol) [0x7ff74cc44eda]\nE       \t(No symbol) [0x7ff74d456e40]\nE       \t(No symbol) [0x7ff74d456faf]\nE       \t(No symbol) [0x7ff74d481c1c]\nE       \t(No symbol) [0x7ff74d4990da]\nE       \t(No symbol) [0x7ff74d47c439]\nE       \t(No symbol) [0x7ff74d47c3d0]\nE       \t(No symbol) [0x7ff74cc76bf1]\nE       \t(No symbol) [0x7ff74cc5c109]\nE       \t(No symbol) [0x7ff74cc5d433]\nE       \t(No symbol) [0x7ff74d377041]\nE       \t(No symbol) [0x7ff74d395c76]\nE       \t(No symbol) [0x7ff74d38c340]\nE       \t(No symbol) [0x7ff74d00c9be]\nE       \t(No symbol) [0x7ff74cde2fa5]\nE       \t(No symbol) [0x7ff74cdde2d4]\nE       \t(No symbol) [0x7ff74cdde464]\nE       \t(No symbol) [0x7ff74cdc731c]\nE       \t(No symbol) [0x7ffa5e28dda7]\nE       \t(No symbol) [0x7ffa5fbf9c5c]\n\n..\\..\\..\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:234: StaleElementReferenceException"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T17:04:49",
+        "resumen": {
+            "total": 3,
+            "PASS": 3,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 100.0
+        },
+        "resultados": [
+            {
+                "test": "tests/test_keypresses.py::test_key_presses[A-A]",
+                "fecha": "2026-11-18T17:04:25",
+                "url": "https://the-internet.herokuapp.com/key_presses",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_keypresses.py::test_key_presses[B-B]",
+                "fecha": "2026-11-18T17:04:37",
+                "url": "https://the-internet.herokuapp.com/key_presses",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_keypresses.py::test_enter_submits_form",
+                "fecha": "2026-11-18T17:04:47",
+                "url": "https://the-internet.herokuapp.com/key_presses?",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T17:07:44",
+        "resumen": {
+            "total": 0,
+            "PASS": 0,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 0
+        },
+        "resultados": []
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T17:08:07",
+        "resumen": {
+            "total": 0,
+            "PASS": 0,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 0
+        },
+        "resultados": []
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T17:08:47",
+        "resumen": {
+            "total": 1,
+            "PASS": 1,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 100.0
+        },
+        "resultados": [
+            {
+                "test": "tests/test_textbox_ab.py::test_textbox_ab",
+                "fecha": "2026-11-18T17:08:47",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T17:10:16",
+        "resumen": {
+            "total": 1,
+            "PASS": 1,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 100.0
+        },
+        "resultados": [
+            {
+                "test": "tests/test_dropdown.py::test_dropdown",
+                "fecha": "2026-11-18T17:10:13",
+                "url": "https://the-internet.herokuapp.com/",
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T17:11:16",
+        "resumen": {
+            "total": 1,
+            "PASS": 1,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 100.0
+        },
+        "resultados": [
+            {
+                "test": "tests/test_check_boxes.py::test_check_boxes",
+                "fecha": "2026-11-18T17:11:16",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            }
+        ]
+    },
+    {
+        "fecha_ejecucion": "2026-11-18T17:31:28",
+        "resumen": {
+            "total": 10,
+            "PASS": 10,
+            "FAIL": 0,
+            "ERROR": 0,
+            "SKIPPED": 0,
+            "porcentaje_exito": 100.0
+        },
+        "resultados": [
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[https://example.com-True]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[http://example.com/ruta-True]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[https://sub.example.com/ruta?dato=1-True]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[example.com-False]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[ftp://example.com-False]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[https://-False]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[https://example-False]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[https://example..com-False]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[http://[::1-False]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            },
+            {
+                "test": "tests/test_analizador_urls.py::test_es_url_valida[-False]",
+                "fecha": "2026-11-18T17:31:28",
+                "url": null,
+                "resultado": "PASS",
+                "descripcion": "Test passed"
+            }
+        ]
     }
 ]

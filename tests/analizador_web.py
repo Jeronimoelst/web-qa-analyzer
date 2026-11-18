@@ -18,6 +18,7 @@ def title(driver):
 def contar_enlaces(driver):
     enlaces = driver.find_elements(By.TAG_NAME, "a")
     wait = WebDriverWait(driver, 10)
+    wait.until(lambda d: len(enlaces) > 0)
     print(f"Enlaces encontrados: {len(enlaces)}")
     return len(enlaces)
     
